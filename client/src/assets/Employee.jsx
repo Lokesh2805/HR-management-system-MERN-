@@ -27,7 +27,7 @@ function Employee() {
         <table className='table'>
           <thead>
           <tr>
-            <th>id</th>
+           
             <th>Name</th>
             <th>Image</th>
             <th>Email</th>
@@ -46,8 +46,8 @@ function Employee() {
               {<img src={`http://localhost:8080/images/`+ employee.imageFilename} alt='employeeimg' className='employee_image'/>}
             </td>
             <td>{employee.email}</td>
-            <td>{employee.address}</td>
             <td>{employee.salary}</td>
+            <td>{employee.address}</td>
             <td>
               <Link to={`/EmployeeEdit/`+employee._id} className='btn btn-sm btn-primary me-2'>Edit</Link>
               <button className='btn btn-sm btn-danger'>Delete</button>

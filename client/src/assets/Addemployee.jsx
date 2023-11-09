@@ -35,11 +35,7 @@ function Addemployee() {
     <div className='d-flex flex-column align-items-center pt-4'>
 			<h2>Add Employee</h2>
 			<form class="row g-3 w-50" onSubmit={handlesubmit}>
-			<div class="col-12">
-					<label for="inputName" class="form-label">id</label>
-					<input type="text" class="form-control" id="inputName" name='name' placeholder='Enter Name' autoComplete='off'
-					onChange={e => setData({...data,name: e.target.value})}/>
-				</div>
+			
 			<div class="col-12">
 					<label for="inputName" class="form-label">Name</label>
 					<input type="text" class="form-control" id="inputName" name='name' placeholder='Enter Name' autoComplete='off'
@@ -64,6 +60,11 @@ function Addemployee() {
 					<label for="inputAddress" class="form-label">Address</label>
 					<input type="text" class="form-control" id="inputAddress" name='address' placeholder="Enter Address" autoComplete='off'
 					onChange={e => setData({...data,address: e.target.value})}/>
+				</div>
+				<div class="col-12">
+					<label for="inputCategory" class="form-label">Category</label>
+					<input type="text" class="form-control" id="inputCategory" name='category' placeholder="Enter Category" autoComplete='off'
+					onChange={e => setData({...data,category: e.target.value})}/>
 				</div>
 				<div class="col-12 mb-3">
 					<label class="form-label" for="inputGroupFile01">Select Image</label>

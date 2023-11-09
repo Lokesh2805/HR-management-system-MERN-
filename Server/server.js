@@ -10,6 +10,7 @@ import connection from "./database/connections.js";
 import multer from "multer";
 import path from "path";
 import CreateEmployeeModel from "./models/CreateEmployee.js";
+import CreateCategoryModel from "./models/AddCategory.js";
 
 const app = express();
 const corsOptions = {
@@ -82,7 +83,7 @@ const password = "Loko2244";
     }catch(err){
       console.log("getEmployee error");
     }
-    // try {
+  // try {
     //   const id = request.params._id;
     //   console.log('Received Object ID:', id);
   
@@ -143,6 +144,18 @@ app.post('/create', upload.single('image'), async (request, response) => {
     response.status(500).json({ error: "Internal server error" });
   }
 });
+
+app.post('/add_category', async(req, response)=>{
+  try{
+    
+    const categorylist = new CreateCategoryModel({ category: req.body.category });
+    const savedCategory = await categorylist.save();
+     response.status(201).json({Status: true});
+  } catch (err) {
+    response.status(500).json({ Error: "Internal server error" });
+  }
+  }
+)
   
 
 

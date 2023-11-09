@@ -22,6 +22,12 @@ function Dashboard (){
                                 <i class="fs-4 bi-people text-light"></i> <span class="ms-1 d-none d-sm-inline text-light">Manage employees</span>
                             </Link>
                         </li>
+
+                        <li class="nav-item">
+                            <Link to='/category' class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-columns text-light"></i> <span class="ms-1 d-none d-sm-inline text-light">Category</span>
+                            </Link>
+                        </li>
                         
                         <li>
                             <Link to='/profile' class="nav-link px-0 align-middle">

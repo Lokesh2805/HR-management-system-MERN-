@@ -10,16 +10,17 @@ function EmployeeEdit() {
         address:''    })
 
 	const navigate = useNavigate();
-    const {_id} = useParams();
-    // console.log(_id);
+    const _id= useParams();
+    console.log(_id);
 
     useEffect(()=>{
-        axios.get('http://localhost:8080/get/'+_id)
+        axios.get('http://localhost:8080/get/'+{_id})
         .then(res=>{
             setData({...data, name: res.data.Result.name,
             email: res.data.Result.email,
             salary: res.data.Result.salary,
             address: res.data.Result.address})
+			
         })
         .catch(err=> console.log(err));
     },[])
@@ -28,7 +29,7 @@ function EmployeeEdit() {
         event.preventDefault();
 
 
-        axios.put('http://localhost:8080/update/'+_id, data)
+        axios.put('http://localhost:8080/update/'+{_id}, data)
         .then(res=>{
             
 			navigate('/employee')
